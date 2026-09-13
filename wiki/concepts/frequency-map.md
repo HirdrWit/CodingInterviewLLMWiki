@@ -1,7 +1,7 @@
 ---
 type: concept
-status: learning
-updated: 2026-09-10
+status: solid
+updated: 2026-09-13
 sources: []
 tags: [arrays-hashing]
 ---
@@ -51,4 +51,8 @@ you claimed O(n). Bucket sort by count gets you back to O(n).
 
 ## Evidence
 
-*None yet.*
+- [[../problems/valid-anagram|Valid Anagram]] — solved cold unaided in 7 min,
+  2026-09-13. Correct algorithm and correct dict-equality comparison first try;
+  space analysed as O(n) when the bounded alphabet makes it O(1), and the
+  count-building loop was written out twice instead of extracted. `solid`, not
+  higher: one solve, one shape.

@@ -1,6 +1,6 @@
 ---
 type: meta
-updated: 2026-09-10
+updated: 2026-09-13
 sources: []
 tags: [spine]
 ---
@@ -25,7 +25,12 @@ A failed re-attempt resets to +3d and demotes the status one rung.
 
 | Item | Skill | Last attempt | Result | Due |
 |---|---|---|---|---|
-| — | — | — | — | — |
+| [[../problems/contains-duplicate\|Contains Duplicate]] | [[../concepts/seen-set\|Seen-Set]] | 2026-09-13 | `solved cold`, 7 min | **2026-09-16** |
+| [[../problems/valid-anagram\|Valid Anagram]] | [[../concepts/frequency-map\|Frequency Map]] | 2026-09-13 | `solved cold`, 7 min | **2026-09-16** |
+
+**Pass condition for Contains Duplicate** is not just working code — it is
+`seen = set()`, an explicit return on every path, and both complexities stated
+correctly and unprompted. Working code with "O(n) worst case" is a fail.
 
 ## Retired
 *Passed +90d cold. Genuinely known.*

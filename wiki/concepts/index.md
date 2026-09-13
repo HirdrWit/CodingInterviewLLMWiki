@@ -1,6 +1,6 @@
 ---
 type: index
-updated: 2026-09-10
+updated: 2026-09-13
 sources: []
 tags: [collection]
 ---
@@ -14,7 +14,9 @@ New pages here start from `templates/concept.md`.
 | Concept | Status | Skill |
 |---|---|---|
 | [[hash-map\|Hash Map]] | `learning` | [[../skills/data-structures\|Data Structures]] |
-| [[frequency-map\|Frequency Map]] | `learning` | [[../skills/data-structures\|Data Structures]] |
+| [[seen-set\|Seen-Set]] | `solid` | [[../skills/data-structures\|Data Structures]] |
+| [[frequency-map\|Frequency Map]] | `solid` | [[../skills/data-structures\|Data Structures]] |
+| [[constraint-bounded-complexity\|Constraint-Bounded Complexity]] | `learning` | [[../skills/complexity\|Complexity]] |
 | [[complement-lookup\|Complement Lookup]] | `learning` | [[../skills/algorithms\|Algorithms]] |
 | [[two-pointers\|Two Pointers]] | `unseen` | [[../skills/algorithms\|Algorithms]] |
 

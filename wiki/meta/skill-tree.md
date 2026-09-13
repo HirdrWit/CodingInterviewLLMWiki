@@ -1,6 +1,6 @@
 ---
 type: meta
-updated: 2026-09-10
+updated: 2026-09-13
 sources: []
 tags: [spine, scoreboard]
 ---
@@ -25,8 +25,8 @@ cold re-attempt is normal and expected.
 
 | Skill | Status | Evidence | Notes |
 |---|---|---|---|
-| [[../skills/complexity\|Complexity analysis]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]] | Big-O, space, amortized |
-| [[../skills/data-structures\|Data structures]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]] | arrays, hashes, trees, heaps, graphs |
+| [[../skills/complexity\|Complexity analysis]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]] | Big-O, space, amortized. **Not promoted:** across both 2026-09-13 debriefs the hash worst case was misstated and the bounded-alphabet space was missed — see [[gaps]] |
+| [[../skills/data-structures\|Data structures]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]], [[../problems/contains-duplicate\|Contains Duplicate]], [[../problems/valid-anagram\|Valid Anagram]] | arrays, hashes, trees, heaps, graphs. [[../concepts/seen-set\|Seen-Set]] and [[../concepts/frequency-map\|Frequency Map]] are `solid`; the rest of the topic untested |
 | [[../skills/algorithms\|Algorithms]] | `learning` | [[../curriculum/index\|Blind 75]] | sorting, search, recursion, DP, greedy |
 
 ## Band 2 — Building
@@ -56,7 +56,7 @@ cold re-attempt is normal and expected.
 | Skill | Status | Evidence | Notes |
 |---|---|---|---|
 | [[../skills/behavioral\|Behavioral interviewing]] | `unseen` | — | STAR stories, failure stories |
-| [[../skills/communication\|Technical communication]] | `unseen` | — | thinking aloud, whiteboarding, writing |
+| [[../skills/communication\|Technical communication]] | `unseen` | — | thinking aloud, whiteboarding, writing. **Now the top DSA risk** — see [[gaps]]. Parked as a band, but narration is being trained inside every `timed` box |
 | [[../skills/job-search\|Job search & applications]] | `unseen` | — | resume, outreach, pipeline, negotiation |
 
 ---

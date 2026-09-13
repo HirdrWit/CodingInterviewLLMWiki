@@ -2,7 +2,7 @@
 type: lesson
 topic: arrays-hashing
 status: ready
-updated: 2026-09-10
+updated: 2026-09-13
 sources: [https://www.geeksforgeeks.org/introduction-to-hashing-2/, https://www.geeksforgeeks.org/load-factor-and-rehashing/, https://www.geeksforgeeks.org/complexity-cheat-sheet-for-python-operations/]
 tags: [lesson, arrays-hashing]
 ---
@@ -148,7 +148,7 @@ space, the hash map stops being the automatic answer. That's the whole trade.
 This is the part that transfers. Each pattern is **a trigger in the problem
 statement → the tool it should summon.** Learn the triggers, not the code.
 
-### Pattern A — the seen-set
+### Pattern A — the seen-set → [[../concepts/seen-set|concept page]]
 > **Trigger:** "does it contain a duplicate", "have we visited this", "is it unique"
 
 Walk the input once, keeping a set of what you've already passed. Before
