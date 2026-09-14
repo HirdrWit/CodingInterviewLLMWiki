@@ -122,3 +122,55 @@ it". [[wiki/meta/gaps]] re-ranked accordingly.
 **Next:** `timed two-sum` on 2026-09-14, which closes the blocking gap. Cold
 re-attempts of both Easies due 2026-09-16. Narration is the thing to fix, and
 it is now explicitly part of the pass condition, not a suggestion.
+
+---
+
+## 2026-09-14 — All 18 lessons written
+
+The curriculum now has a lesson for every topic, not just topic 1. Written in
+parallel, one agent per lesson, against `wiki/lessons/01-arrays-hashing.md` as
+the quality bar.
+
+**What landed**
+
+- **18 lesson pages** (`wiki/lessons/02-…` through `18-…`), ~9,200 lines. Each
+  follows `templates/lesson.md`: mental model, mechanics, complexity table,
+  patterns as *trigger → tool*, traps, a worked example, materials, self-checks.
+- **17 new curriculum topic pages.** Every topic is now indexed down to its
+  individual problems — the "expand it when the lesson is written" note in
+  [[wiki/curriculum/index]] has been discharged. Problem counts sum to 75.
+- **56 new concept pages**, taking `wiki/concepts/` from 6 to 62.
+
+**Deliberate constraints**
+
+- **No solutions to anything in the Blind 75.** Every section-8 worked example
+  uses a problem outside the set — Squares of a Sorted Array, Minimum Size
+  Subarray Sum, Koko Eating Bananas, Baseball Game, Remove Linked List Elements,
+  Replace Words. Lessons teach the *trigger*, because recognising the pattern is
+  the skill the interview actually tests.
+- **Lessons are written to be read in order.** Sliding Window assumes Two
+  Pointers; Graphs is built on "a tree is a graph that can't loop back, and the
+  one thing graphs add is the visited set"; Greedy is framed as the contrast
+  against DP; Backtracking is framed as the un-memoised version of the same
+  search. Reading one out of order works but costs more.
+- **Every new page is `unseen`.** Nothing was promoted. A written lesson is not
+  evidence, and [[wiki/meta/skill-tree]] is untouched as a result — it still
+  reflects only the two cold solves from 2026-09-13.
+
+**Bookkeeping**
+
+- [[wiki/lessons/index]], [[wiki/curriculum/index]] and [[wiki/concepts/index]]
+  rebuilt; concepts now grouped by the topic that introduces them.
+- [[wiki/meta/resources]] points at each lesson's own materials section rather
+  than duplicating a flat list.
+- Lint: **0 broken wikilinks, 0 orphan pages** across the vault.
+
+**Interruption worth recording.** A usage limit killed 11 of the 17 agents
+mid-run. All 18 lesson files had already been written; what was lost was the
+tail-end bookkeeping — 2 curriculum pages and 21 concept pages — which four
+follow-up agents filled after the reset. Nothing needed rewriting. The
+partition that made this cheap was giving each agent sole ownership of its
+files and forbidding edits to shared index pages.
+
+**Next:** unchanged by any of this. `timed two-sum`, then the cold re-attempts
+of both Easies. See [[wiki/meta/current-plan]].

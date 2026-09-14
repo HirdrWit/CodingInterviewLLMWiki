@@ -1,6 +1,6 @@
 ---
 type: meta
-updated: 2026-09-10
+updated: 2026-09-14
 sources: []
 tags: [spine, resources]
 ---
@@ -60,6 +60,20 @@ dead link. They open normally in a browser.)*
 - Computerphile, *Hashing Algorithms and Security* — search YouTube; good for
   intuition on what a hash function is actually doing.
 - NeetCode's Arrays & Hashing playlist — one video per problem above.
+
+## Topics 2–18
+
+Per-topic reading lives in **section 9 of each lesson** — see
+[[../lessons/index|the lesson index]]. Each lesson lists its own materials in the
+order to read them, with a note on what each one is actually good for, rather
+than duplicating a flat list here.
+
+The two links at the top of this page (NeetCode Blind 75, NeetCode on YouTube)
+cover every topic. The rule holds throughout: **watch the video only after a
+timed attempt and a debrief.**
+
+This section stays thin on purpose. Add a link here only when a source proves
+useful across more than one topic; single-topic sources belong in that lesson.
 
 ## How to add to this page
 

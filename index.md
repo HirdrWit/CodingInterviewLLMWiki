@@ -10,6 +10,7 @@ An [[CLAUDE|LLM wiki]] — I read, think, and solve; the LLM keeps the books.
 ## Start here
 
 - **[[wiki/lessons/01-arrays-hashing|▶ Lesson 1 — Arrays & Hashing]]** — start here
+- [[wiki/lessons/index|All 18 lessons]] — written and ready; read in order
 - [[wiki/curriculum/index|Curriculum]] — the Blind 75 roadmap and the study loop
 - [[wiki/meta/resources|Resources]] — vetted learning materials per topic
 - [[wiki/meta/profile|Profile]] — target role, constraints, timeline *(still a stub)*
@@ -21,8 +22,13 @@ An [[CLAUDE|LLM wiki]] — I read, think, and solve; the LLM keeps the books.
 
 ## Current focus
 
-**DSA — NeetCode Blind 75.** Topic 1 of 18: [[wiki/curriculum/arrays-hashing|Arrays & Hashing]], 0/8 solved.
+**DSA — NeetCode Blind 75.** Topic 1 of 18: [[wiki/curriculum/arrays-hashing|Arrays & Hashing]], 2/8 solved cold.
 Everything else is parked on purpose; see [[wiki/meta/current-plan|the plan]].
+
+All 18 lessons are now written, and every topic is indexed down to its problems.
+**That is shelf stock, not progress** — a lesson read is not a problem solved, and
+a concept page written is not a skill earned. The scoreboard that counts is the
+[[wiki/meta/skill-tree|skill tree]], and it moves only on a cold solve.
 
 ## Skill areas
 
