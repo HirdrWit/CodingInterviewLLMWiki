@@ -13,19 +13,19 @@ ranked against what's here. While it's a stub, planning is generic guesswork.
 
 ## Target
 
-- **Role:** <!-- e.g. backend engineer, full-stack, new grad, career switcher -->
-- **Level:** <!-- intern / junior / mid / switching in from another field -->
-- **Company shape:** <!-- startup / big tech / agency / remote-first / local -->
-- **Location or remote:**
+- **Role:**  Software Engineering Manager
+- **Level:**  Senior Engineer
+- **Company shape:** S&P Tech Company (Vivint Smart Home)
+- **Location or remote:** Boston Hybrid
 - **Target date for offer:**
 
 ## Starting point
 
-- **Years writing code:**
-- **Strongest language:**
-- **Languages touched:**
-- **Built and shipped so far:** <!-- link [[../projects/...]] pages -->
-- **Formal background:** <!-- CS degree / bootcamp / self-taught / other field -->
+- **Years writing code:** 7
+- **Strongest language:** Golang
+- **Languages touched:** Golang, Python
+- **Built and shipped so far:** 
+- **Formal background:** Bachelors in Computer Science
 
 ## Constraints
 
