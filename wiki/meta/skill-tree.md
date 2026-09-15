@@ -46,7 +46,7 @@ cold re-attempt is normal and expected.
 
 | Skill | Status | Evidence | Notes |
 |---|---|---|---|
-| [[../skills/system-design\|System design]] | `unseen` | — | scaling, caching, queues, tradeoffs |
+| [[../skills/system-design\|System design]] | `unseen` | — | scaling, caching, queues, tradeoffs. **Claimed solid** from real work (2026-09-14); stays `unseen` until a design post-mortem links |
 | [[../skills/concurrency\|Concurrency]] | `unseen` | — | async, threads, races, locks |
 | [[../skills/code-quality\|Code quality & review]] | `unseen` | — | naming, decomposition, reading others' code |
 
@@ -55,7 +55,7 @@ cold re-attempt is normal and expected.
 
 | Skill | Status | Evidence | Notes |
 |---|---|---|---|
-| [[../skills/behavioral\|Behavioral interviewing]] | `unseen` | — | STAR stories, failure stories |
+| [[../skills/behavioral\|Behavioral interviewing]] | `unseen` | — | STAR stories, failure stories. **Claimed solid** from 4 years as an EM (2026-09-14); stays `unseen` under the evidence rule until something links |
 | [[../skills/communication\|Technical communication]] | `unseen` | — | thinking aloud, whiteboarding, writing. **Now the top DSA risk** — see [[gaps]]. Parked as a band, but narration is being trained inside every `timed` box |
 | [[../skills/job-search\|Job search & applications]] | `unseen` | — | resume, outreach, pipeline, negotiation |
 

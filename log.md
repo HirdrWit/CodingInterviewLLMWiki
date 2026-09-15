@@ -266,3 +266,46 @@ Proposed but not done: stub a Vivint company page. A named target exists and
 `wiki/companies/` is empty.
 
 **Next:** `timed group-anagrams` (#4, first Medium).
+
+## 2026-09-14 (cont.) — direction corrected by Rob; DSA stays primary
+
+Rob pushed back on the rebalance suggested an hour earlier, and the pushback is
+right. The inference was "7 years + EM title → the gap is design and behavioral",
+which is the standard senior-hire read. He has information the profile doesn't
+carry: the behavioral and design reps already exist from doing the job. **DSA
+stays primary.** [[wiki/meta/current-plan]] rewritten to record the corrected
+direction rather than the inferred one.
+
+**Three things came out of the exchange that are worth more than the correction.**
+
+**1. The IC/manager fork is deliberately unresolved.** Rob is undecided. The prep
+overlaps almost entirely until applications start, so nothing is blocked. Noted
+an asymmetry: EM credibility doesn't decay while doing DSA, but IC credibility
+decays while not coding. The management experience is banked; the hands-on claim
+is the perishable one. The DSA work is therefore what keeps both doors open,
+independent of which gets used.
+
+**2. New hypothesis about what "weak at DSA" means here.** Three cold solves,
+7/11 minutes, **zero algorithmic errors and zero wrong turns** across three
+boxes — while every single miss was in the surrounding work (brute force,
+caveats, constraints, naming). That reads as fluent in the ideas and rusty at the
+performance, not weak pattern recognition. Consistent with four years of
+management plus AI doing the generative work. Recorded in the plan explicitly as
+a **hypothesis, not a finding** — three Easies from one pattern family is thin,
+and problems 4–8 this week confirm or kill it. If it holds, the implication is
+fewer problems done out loud, not more reps.
+
+New [[wiki/meta/gaps|gap]] row, ranked Serious: coding fluency from an empty file,
+unaided and observed — distinct from algorithm knowledge.
+
+**3. Standing rule added: no assistance inside a box.** No Copilot, no Claude, no
+autocomplete. Rob raised AI erosion himself and it is the sharper of the two
+decays he named — recent, and invisible. Already satisfied by working in the
+LeetCode web editor; now written down rather than incidental.
+
+Behavioral and design left `unseen` on the [[wiki/meta/skill-tree|skill tree]]
+with "claimed solid" noted inline — the evidence rule, not a judgment. Offered a
+cheap conversion: one post-mortem page on a real design led at Vivint. Not taken
+up; not pushed.
+
+**Next:** unchanged — `timed group-anagrams` (#4, first Medium).
