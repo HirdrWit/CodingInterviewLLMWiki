@@ -174,3 +174,95 @@ files and forbidding edits to shared index pages.
 
 **Next:** unchanged by any of this. `timed two-sum`, then the cold re-attempts
 of both Easies. See [[wiki/meta/current-plan]].
+
+## 2026-09-14 — Two Sum solved cold; blocking gap closed; process landed
+
+Write-up: [[wiki/problems/two-sum]]. 11 minutes of a 30 minute box, unaided,
+correct first write.
+
+**The box where the process happened.** Brute force typed as a comment before
+the solution, complexity volunteered with the average-case caveat, space stated
+without being asked — all three fixes from the 2026-09-13 debriefs, landing
+together on the first attempt after being asked three times.
+
+**Blocking gap closed.** All three Easies of Topic 1 attempted, debriefed and
+solved cold: 7 min, 7 min, 11 min. That answers the question the vault was built
+to answer — the ceiling on Easies is not the binding constraint. Moved to the
+closed-gaps table in [[wiki/meta/gaps]] with the evidence, rather than deleted.
+
+**What the debrief found.**
+
+- Checked before inserting, so self-pairing is *structurally impossible* rather
+  than guarded against afterwards. That is the bug in this problem and it wasn't
+  written. Computed the complement on its own line, which shows the actual
+  insight — search for the partner, not the pair.
+- Explicit `return []` on the unreachable path. Correct instinct, worth defending
+  out loud rather than looking accidental.
+- **Naming was the only real weakness.** `val` for the complement; `store` for
+  `seen`; `.get()` inside a guarded branch. The name *is* the insight here —
+  `complement = target - num` explains itself, `val = ...` doesn't.
+- Answered the O(min(n, k)) question correctly when asked: Valid Anagram's k=26
+  binds → O(1), Two Sum's k≈2·10⁹ doesn't → O(n). Yesterday's concept holding up
+  under a reversal. Counted as prompted, not volunteered.
+- **One process step still missing in all three boxes: naming the rejected
+  alternative.** Here it's a good one — sort + two pointers is O(1) space but the
+  problem returns *indices*, and sorting destroys them. New gap row.
+
+- [[wiki/concepts/complement-lookup]] promoted `learning` → `solid`.
+- Gap counters now tracked as fractions (narration 1 of 3, caveat 1 of 3,
+  constraints 1 of 2) rather than pass/fail, so partial progress is visible.
+- [[wiki/skills/complexity|Complexity analysis]] still held at `learning`: the
+  caveat appeared but the worst case is unspoken and the constraint reasoning
+  was prompted.
+
+**This week's plan is complete** — [[wiki/meta/current-plan]] targeted problems
+1–3 attempted and debriefed; all three are solved cold instead. Plan is now
+stale and should be replaced by a `plan` run before the Mediums start.
+
+**Next:** cold re-attempts due 2026-09-16 (Contains Duplicate, Valid Anagram)
+and 2026-09-17 (Two Sum). Then Topic 1 problems 4–8, all Mediums. Expect
+unfinished boxes — that is what the Mediums are for.
+
+## 2026-09-14 (cont.) — `plan` run; profile read for the first time
+
+Ran `plan` after Two Sum. Replaced [[wiki/meta/current-plan]] wholesale.
+
+**The significant finding is not in the DSA work.** [[wiki/meta/profile]] had
+been filled in at some point before this session and was read for the first time
+tonight — it was modified in the working tree at session start and got swept into
+the day's commit unread. What it says contradicts the premise the vault was
+built on:
+
+Target role **Software Engineering Manager**, level **Senior Engineer**, target
+company **Vivint Smart Home** (Boston hybrid), **7 years** experience, CS degree,
+strongest language **Golang**.
+
+[[CLAUDE.md]] frames the goal as "get Rob a software engineering job" with bands
+2–4 parked until topics 1–3 are cold-solvable. That is correct strategy for
+someone with no track record. For a 7-year engineer targeting senior or EM it is
+probably wrong in emphasis: system design and behavioral carry the most weight in
+both loops and are both `unseen`, while Blind 75 completion is a gate rather than
+the finish line. Flagged in the plan; the parking of bands 2–4 should expire
+earlier than currently written. **Not acted on unilaterally — this is Rob's call
+and CLAUDE.md is his file.**
+
+Also raised, not decided:
+- **Role and level on file describe two different loops.** SEM adds people/org
+  rounds and usually weights coding lighter. Doesn't change this week's work, so
+  not blocking, but it governs everything after.
+- **Solving in Python while Golang is 7 years deep.** A real decision, currently
+  being made by default.
+- Hours per week, target date, and definition of done are still blank, so every
+  volume number in the plan is a guess and is labelled as one.
+
+**Plan written:** Topic 1 finished over 2026-09-14 → 09-20. Re-attempts first in
+any session (09-16 ×2, 09-17 ×1), then Mediums 4–8 in order. Realistic target is
+problems 4–6 plus all three re-attempts passing; 7–8 stretch. Volume deliberately
+not raised — three Easies at 7–11 minutes says the Easies were never the
+constraint. The four process gaps are the actual target and are trained inside
+the existing boxes at no extra time cost.
+
+Proposed but not done: stub a Vivint company page. A named target exists and
+`wiki/companies/` is empty.
+
+**Next:** `timed group-anagrams` (#4, first Medium).

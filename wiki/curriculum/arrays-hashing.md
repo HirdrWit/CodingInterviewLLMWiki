@@ -1,7 +1,7 @@
 ---
 type: curriculum
 status: learning
-updated: 2026-09-13
+updated: 2026-09-14
 sources: [https://neetcode.io/practice/practice/blind75]
 tags: [curriculum, arrays-hashing]
 ---
@@ -19,7 +19,7 @@ get built, and habits are what survive interview pressure.
 |---|---|---|---|---|---|---|
 | 1 | Contains Duplicate | Easy | seen-set | 1 | `solved cold` | [[../problems/contains-duplicate\|write-up]] |
 | 2 | Valid Anagram | Easy | frequency map | 1 | `solved cold` | [[../problems/valid-anagram\|write-up]] |
-| 3 | Two Sum | Easy | complement lookup | 0 | `unseen` | — |
+| 3 | Two Sum | Easy | complement lookup | 1 | `solved cold` | [[../problems/two-sum\|write-up]] |
 | 4 | Group Anagrams | Medium | canonical key | 0 | `unseen` | — |
 | 5 | Top K Frequent Elements | Medium | frequency + bucket sort | 0 | `unseen` | — |
 | 6 | Encode and Decode Strings | Medium | length-prefix protocol | 0 | `unseen` | — |
@@ -60,3 +60,18 @@ The algorithms are not the constraint — the analysis and the narration are.
   not O(n). See [[../concepts/constraint-bounded-complexity]]. Recurs in
   problems 4 and 5.
 - **Never write the same loop twice.** Extract it, or name the stdlib tool.
+
+**2026-09-14, after problem 3.** All three Easies solved cold. First box with no
+correctness issue *and* the process followed — brute force narrated up front,
+complexity volunteered with the average-case caveat.
+
+- **Space is O(min(n, k)).** Valid Anagram's k=26 binds → O(1); Two Sum's
+  k≈2·10⁹ doesn't → O(n). Same formula, and which side you're on is a fact about
+  the constraints, not the data structure.
+- **Check before inserting** in any as-you-scan map, or an element pairs with
+  itself.
+- **Naming is the insight.** `complement = target - num` explains; `val = ...`
+  does not.
+- Last process step still missing: **name the approach rejected, and why.**
+
+The Mediums (4–8) start here. Expect unfinished boxes — that is the point of them.

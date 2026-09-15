@@ -1,7 +1,7 @@
 ---
 type: concept
-status: learning
-updated: 2026-09-10
+status: solid
+updated: 2026-09-14
 sources: []
 tags: [arrays-hashing]
 ---
@@ -52,4 +52,8 @@ O(n) time, O(n) space — one pass, one map.
 
 ## Evidence
 
-*None yet.*
+- [[../problems/two-sum|Two Sum]] — solved cold unaided in 11 min, 2026-09-14.
+  Checked before inserting, so self-pairing was structurally impossible rather
+  than guarded against; computed the complement on its own line. Naming was the
+  only weakness (`val` for the complement). `solid`, not higher: one solve, one
+  shape.

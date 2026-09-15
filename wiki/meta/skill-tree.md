@@ -1,6 +1,6 @@
 ---
 type: meta
-updated: 2026-09-13
+updated: 2026-09-14
 sources: []
 tags: [spine, scoreboard]
 ---
@@ -25,8 +25,8 @@ cold re-attempt is normal and expected.
 
 | Skill | Status | Evidence | Notes |
 |---|---|---|---|
-| [[../skills/complexity\|Complexity analysis]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]] | Big-O, space, amortized. **Not promoted:** across both 2026-09-13 debriefs the hash worst case was misstated and the bounded-alphabet space was missed — see [[gaps]] |
-| [[../skills/data-structures\|Data structures]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]], [[../problems/contains-duplicate\|Contains Duplicate]], [[../problems/valid-anagram\|Valid Anagram]] | arrays, hashes, trees, heaps, graphs. [[../concepts/seen-set\|Seen-Set]] and [[../concepts/frequency-map\|Frequency Map]] are `solid`; the rest of the topic untested |
+| [[../skills/complexity\|Complexity analysis]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]] | Big-O, space, amortized. **Not promoted:** the caveat appeared 2026-09-14 after two misses, but the worst case is still unspoken and the constraint reasoning was prompted, not volunteered — see [[gaps]] |
+| [[../skills/data-structures\|Data structures]] | `learning` | [[../lessons/01-arrays-hashing\|Lesson 1]], [[../problems/contains-duplicate\|Contains Duplicate]], [[../problems/valid-anagram\|Valid Anagram]], [[../problems/two-sum\|Two Sum]] | arrays, hashes, trees, heaps, graphs. [[../concepts/seen-set\|Seen-Set]], [[../concepts/frequency-map\|Frequency Map]] and [[../concepts/complement-lookup\|Complement Lookup]] are `solid` — all on Easies, all one solve each. Nothing beyond hashing tested |
 | [[../skills/algorithms\|Algorithms]] | `learning` | [[../curriculum/index\|Blind 75]] | sorting, search, recursion, DP, greedy |
 
 ## Band 2 — Building

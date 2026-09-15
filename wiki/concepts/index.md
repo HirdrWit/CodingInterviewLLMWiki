@@ -29,7 +29,7 @@ Lesson: [[../lessons/01-arrays-hashing]]
 | [[hash-map\|Hash Map]] | `learning` |
 | [[seen-set\|Seen-Set]] | `solid` |
 | [[frequency-map\|Frequency Map]] | `solid` |
-| [[complement-lookup\|Complement Lookup]] | `learning` |
+| [[complement-lookup\|Complement Lookup]] | `solid` |
 | [[canonical-key\|Canonical Key]] | `unseen` |
 | [[constraint-bounded-complexity\|Constraint-Bounded Complexity]] | `learning` |
 
