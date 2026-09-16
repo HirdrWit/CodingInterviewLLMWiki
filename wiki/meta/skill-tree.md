@@ -1,6 +1,6 @@
 ---
 type: meta
-updated: 2026-09-14
+updated: 2026-09-16
 sources: []
 tags: [spine, scoreboard]
 ---
@@ -11,6 +11,9 @@ tags: [spine, scoreboard]
 Bands 2–4 are parked on purpose — see [[current-plan|current plan]].
 
 The scoreboard. Every skill, its status, and the evidence that earned it.
+
+Process behaviours (complexity phrasing, naming rejected approaches) are tracked
+separately in [[drills|drills]], not here — they are not skills, they are reps.
 
 Status ladder — see [[../../CLAUDE|CLAUDE.md]] for the full contract:
 `unseen` → `learning` → `shaky` → `solid` → `confident`

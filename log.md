@@ -408,3 +408,41 @@ still never once attempted. It is the cheapest item on the board.
 Monday's slot went unused. It is the box that tests whether the
 "fluent in ideas, rusty at performance" hypothesis survives contact with a
 harder problem, since all six data points so far are Easies.
+
+## 2026-09-16 (cont.) — Rob splits code from analysis; drills created
+
+**Rob's correction, and it stands:** the debrief was too harsh on semantics, and
+re-solving a proven Easy every 3 days is the wrong instrument. *"Quiz me on the
+parts I am failing, not the parts I am getting right."*
+
+He is right, and the diagnosis is sharper than the one I was operating on. Both
+Topic 1 Easies were solved cold with correct code and both still failed — each on
+**one spoken line.** Bundling that into a problem re-attempt pays six minutes of
+coding to test ten seconds of talking, and runs the full `+3d → +10d → +30d →
++90d` ladder against a skill that had stopped failing three days ago.
+
+**What changed:**
+
+- **[[wiki/problems/contains-duplicate|Contains Duplicate]] and
+  [[wiki/problems/valid-anagram|Valid Anagram]] retired from
+  [[wiki/meta/review-queue|the queue]].** Both solved cold twice, no correctness
+  issue either time, one byte-identical to the target. Retired on evidence, not
+  on the +90d schedule — the ladder measures elapsed time, and what mattered here
+  was that the thing had stopped failing.
+- **New op `drill`, and [[wiki/meta/drills|wiki/meta/drills.md]].** Analysis
+  only, no editor, one or two minutes at the top of a session. Three live rows,
+  all of them things that actually failed: naming the rejected approach (0 of 5),
+  the hash worst case, naming the stdlib tool. Space-against-constraints is
+  already passing at 2 of 2 and is on its way out.
+- **[[notes/Complexity - reference card|notes/Complexity — reference card]]**
+  filed at Rob's request. The semantics live there to be *read* — the four-part
+  sentence, the bounded-vs-unbounded key space table, the phrasing tics. Not
+  re-earned by re-solving Easies.
+- `CLAUDE.md` gained the `drill` operation; the queue records the policy change.
+
+**The principle worth keeping:** only things that have actually failed get a row,
+and rows retire when they stop failing. The queue was accumulating reps by
+schedule rather than by evidence, which is the failure mode this vault is
+supposed to prevent.
+
+**Next:** `timed group-anagrams` (#4), first Medium — now the only open item.

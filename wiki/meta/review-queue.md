@@ -21,44 +21,23 @@ A failed re-attempt resets to +3d and demotes the status one rung.
 |---|---|---|---|---|
 | — | — | — | — | — |
 
-*Both items due 2026-09-16 were attempted and both failed on their pre-stated
-pass conditions. Neither failure was in the code.*
+*Empty. Both items due 2026-09-16 were attempted, solved cold, and had their
+code retired — see the policy change at the foot of this page. The analysis they
+failed on moved to [[drills|drills]].*
 
 ## Scheduled
 
 | Item | Skill | Last attempt | Result | Due |
 |---|---|---|---|---|
-| [[../problems/contains-duplicate\|Contains Duplicate]] | [[../concepts/seen-set\|Seen-Set]] | 2026-09-16 | **`fail`** — code perfect in 3.5 min; time complexity stated as "O(n) worst" | **2026-09-19** |
-| [[../problems/valid-anagram\|Valid Anagram]] | [[../concepts/frequency-map\|Frequency Map]] | 2026-09-16 | **`fail`** — code cold in 5.9 min, O(1) space nailed; `Counter` never named | **2026-09-19** |
 | [[../problems/two-sum\|Two Sum]] | [[../concepts/complement-lookup\|Complement Lookup]] | 2026-09-14 | `solved cold`, 11 min | **2026-09-17** |
-
-**Pass condition for Contains Duplicate**, revised 2026-09-16. The code half is
-**proven and retired** — `seen = set()`, explicit returns, membership checked
-before insert, all reproduced cold in 3.5 min. The only thing still under test is
-the spoken analysis:
-
-1. Time stated as **O(n) average and O(n²) worst** — both halves, unprompted.
-2. Space reasoned against the constraints (`k ≈ 2·10⁹` does not bind → O(n)).
-3. **One rejected approach named with its reason** (0 of 3 boxes so far).
-
-Correct code with an incomplete complexity sentence fails again. This is the
-third debrief in a row carrying the same caveat.
 
 ## Retired
 *Passed +90d cold. Genuinely known.*
 
 | Item | Skill | Retired |
 |---|---|---|
-| — | — | — |
-
-**Pass condition for Valid Anagram**, revised 2026-09-16. Code is proven —
-deduplicated, correct, with an early exit. Only the talking is under test:
-
-1. **`Counter` named**, whether or not it is the version written.
-2. Time as a **single total**: O(n), worst case included, *because* the bounded
-   alphabet caps collision scans at 26.
-3. Space O(1), stated flat — no "closer to O(1) than O(n)".
-4. **One rejected approach named with its reason.**
+| [[../problems/contains-duplicate\|Contains Duplicate]] | [[../concepts/seen-set\|Seen-Set]] | 2026-09-16 — **code retired early.** Solved cold twice, 7 min then 3 min 32 s, second attempt byte-identical to the target solution. Nothing left to test |
+| [[../problems/valid-anagram\|Valid Anagram]] | [[../concepts/frequency-map\|Frequency Map]] | 2026-09-16 — **code retired early.** Solved cold twice, 7 min then 5 min 53 s, correct and deduplicated both times |
 
 ---
 
@@ -68,3 +47,28 @@ Both problems now in the queue failed on **one spoken line each**, with perfect
 code. The queue has stopped testing whether Rob can solve these and started
 testing whether he can *present* them. That is the correct thing for it to be
 testing — see [[gaps|gaps]], where every Serious row is a process row.
+
+---
+
+## Policy change, 2026-09-16
+
+**Code and analysis are queued separately from here.** Rob's call, and it is
+right: re-solving a proven Easy every 3 days spends the box re-confirming what
+two clean solves already established, and the full `+3d → +10d → +30d → +90d`
+ladder was being applied to a skill that had stopped failing.
+
+Both Topic 1 Easies failed their re-attempts on **one spoken line each** with
+perfect code. Bundling those into a problem re-attempt meant paying six minutes
+of coding to test ten seconds of talking.
+
+So:
+
+- **Code re-attempts** stay in this queue, and retire once solved cold twice
+  with no correctness issue.
+- **Analysis** moves to [[drills|drills]] — asked directly, no coding, a minute
+  or two at the top of a session. The semantics themselves are filed as a
+  reference card at [[../../notes/Complexity - reference card|notes/Complexity]]
+  to be *read*, not re-earned.
+
+A drill that keeps failing is a real signal. A drill that passes twice retires
+the same way a problem does.

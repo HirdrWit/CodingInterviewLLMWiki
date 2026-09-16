@@ -107,6 +107,8 @@ Spine pages, always kept current:
 - `wiki/meta/profile.md` — target role, constraints, timeline. Rob's to edit; you read it.
 - `wiki/meta/gaps.md` — known weaknesses, ranked. Drives what to study next.
 - `wiki/meta/review-queue.md` — spaced-repetition due dates for shaky concepts.
+- `wiki/meta/drills.md` — analysis-only reps, split from the review queue
+  2026-09-16. Code and talking are queued separately.
 
 ---
 
@@ -206,6 +208,14 @@ turns; update the status in `wiki/curriculum/`; schedule the cold re-attempt in
 An unfinished problem is not written off — it goes back in the queue at +2 days
 and gets re-attempted until it's solved cold. **Repeat until confident is the
 default, not the exception.**
+
+### `drill`
+Ask the open rows in `wiki/meta/drills.md`, cold, in chat. **Analysis only — no
+coding, no editor.** One or two minutes at the top of a session. A drill can be
+asked about any problem, including unsolved ones; the point is the reasoning, not
+recall. Record the result the same session — a pass advances the streak, a miss
+resets it. Retire a drill once its streak is met; do not keep asking things that
+have stopped failing.
 
 ### `review`
 Surface everything due in `review-queue.md`, plus anything `confident` untouched
