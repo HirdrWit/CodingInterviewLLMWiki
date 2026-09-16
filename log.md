@@ -493,3 +493,19 @@ about over-indexing on phrasing does not cover it.
 
 **Next:** problem 5, `timed top-k-frequent`. Re-attempt of
 [[wiki/problems/two-sum|Two Sum]] is due 2026-09-17.
+
+**End of session 2026-09-16.** Counting-key alternative to
+[[wiki/problems/group-anagrams|Group Anagrams]] shown and **benchmarked** rather
+than asserted: at the constraint ceiling (n=10⁴, k=100) counting runs 0.045 s
+against sorting's 0.052 s, both producing identical groupings. The O(n·k) vs
+O(n·k log k) win is real asymptotically and nearly vanishes in CPython, because
+`sorted` is native and the counting loop is interpreted. Filed with that caveat
+attached — the version is worth knowing because it can be named and justified,
+not because it is faster here.
+
+**Day's tally.** Two cold re-attempts (both retired on evidence), one Medium
+solved cold, one gap closed, one policy change, two drills fired for the first
+time. Zero algorithmic errors across three boxes.
+
+**Resumes at:** [[wiki/problems/two-sum|Two Sum]] re-attempt, due 2026-09-17,
+then `timed top-k-frequent` (#5).

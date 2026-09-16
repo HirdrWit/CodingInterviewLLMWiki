@@ -115,9 +115,38 @@ Space is O(n · k) for the same reason: every string is stored, plus its key.
 
 **The follow-up to be ready for — can the log factor go?** Yes. Key on a
 26-length tuple of letter counts instead of sorted letters. Counting is O(k), so
-the whole thing is **O(n · k)**. This is the better solution and the natural
-answer to "what else could you do here". It also connects back to
-[[valid-anagram]]: the bounded alphabet is what makes the count key fixed-width.
+the whole thing is **O(n · k)**. It connects back to [[valid-anagram]]: the
+bounded alphabet is what makes a fixed-width key possible at all — the same
+constraint that made that problem's space O(1).
+
+```python
+from collections import defaultdict
+
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
+        store = defaultdict(list)
+        for s in strs:
+            counts = [0] * 26
+            for ch in s:
+                counts[ord(ch) - ord('a')] += 1
+            store[tuple(counts)].append(s)
+        return list(store.values())
+```
+
+`tuple(counts)` for the same reason as `tuple(sorted(s))` — a list is unhashable.
+
+**Measured 2026-09-16 at the constraint ceiling** (n=10⁴, k=100): counting
+0.045 s, sorting 0.052 s. Both verified to produce identical groupings.
+
+**So the asymptotic win nearly vanishes in practice, and that is worth knowing
+honestly.** `sorted` runs in C; the counting loop runs in the interpreter. At
+k=100, `log k ≈ 7`, and a 7× advantage in operation count is eaten by a ~50×
+constant-factor penalty per operation.
+
+The value of this version is that it can be **named and justified**, not that it
+is meaningfully faster here. Complete answer for a real loop: *"counting drops it
+to O(n·k); in CPython the win is marginal because `sorted` is native, but it is
+the better bound and it matters as k grows."*
 
 **What was right:** *"dict lookup average O(1), O(n) worst case since endless
 possibilities of words as keys, not just letters."* That is the key-space
