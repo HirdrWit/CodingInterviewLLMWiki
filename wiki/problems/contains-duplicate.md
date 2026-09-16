@@ -1,6 +1,6 @@
 ---
 type: problem
-updated: 2026-09-13
+updated: 2026-09-16
 sources: [https://leetcode.com/problems/contains-duplicate/]
 tags: [arrays-hashing, easy, seen-set]
 ---
@@ -118,3 +118,72 @@ Scheduled in [[../meta/review-queue|review queue]] for: **2026-09-16** (+3d,
 clean solve). Pass condition is not just working code — it is `seen = set()`,
 an explicit return on every path, and both complexities stated correctly and
 unprompted.
+
+---
+
+## Re-attempt 1 — 2026-09-16 (cold), 3 min 32 s
+
+**Result: `fail`** — on the pass condition, not on the algorithm. Requeued +3d.
+
+Written from memory, no notes, no lookups, in the LeetCode editor:
+
+```python
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        seen = set()
+        for num in nums:
+            if num in seen:
+                return True
+            seen.add(num)
+        return False
+```
+
+That is the target solution exactly. Both named fixes from 2026-09-13 survived
+three days and came back automatically:
+
+- `seen = set()`, not a dict with an unread placeholder value.
+- `seen` rather than `result` — the name now describes the thing.
+- Membership checked **before** insert, so no element pairs with itself.
+
+Time halved, 7 min → 3.5 min. **The algorithm is not in question and will not be
+re-tested.** Nothing about this problem's data structure or code is still open.
+
+### Why it is scored a fail
+
+Complexity was volunteered unprompted — the narration habit is holding — but the
+sentence was:
+
+> "Time: O(n) worst · Space: O(n) worst"
+
+Space is **right**, and right for the right reason: `k ≈ 2·10⁹` does not bind, so
+`min(n, k)` resolves to `n`. See [[../concepts/constraint-bounded-complexity]].
+
+Time is the same error as 2026-09-13, unchanged: **O(n) is the average case,
+labelled as the worst.** n iterations × O(1)-*average* lookup gives O(n) average;
+under colliding keys each lookup degrades to a scan and the true worst case is
+**O(n²)**. Python hashes small ints to themselves, so this is not purely
+theoretical.
+
+The pass condition set on 2026-09-13 named this exact string as a fail, in
+advance. Third debrief in a row where the caveat has been flagged.
+
+**The sentence to make involuntary:**
+
+> "O(n) average — n elements, each an expected-O(1) set lookup and insert.
+> Worst case O(n²) if every key collides, though that needs adversarial input."
+
+### Still missing: the rejected alternative
+
+0 of 3 boxes. Never once said. For this problem it is one sentence:
+
+> "Brute force is the nested loop, O(n²) time and O(1) space. Sorting first
+> gets O(n log n) time and O(1) extra space. I'm rejecting both — O(n) extra
+> space buys the better time bound, and n is 10^5."
+
+### Next re-attempt
+
+**2026-09-19** (+3d). Pass condition is unchanged and narrow: the code is already
+proven, so the *only* thing being tested is the spoken analysis — average **and**
+worst for time, space reasoned against the constraints, and one rejected
+approach named with its reason. Correct code with an incomplete complexity
+sentence fails again.

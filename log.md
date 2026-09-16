@@ -309,3 +309,102 @@ cheap conversion: one post-mortem page on a real design led at Vivint. Not taken
 up; not pushed.
 
 **Next:** unchanged — `timed group-anagrams` (#4, first Medium).
+
+---
+
+## 2026-09-16 — first failed re-attempt, and it is the useful kind
+
+`timed group-anagrams` did not happen on Mon 09-15; the plan's Monday slot went
+unused and problem 4 is still `unseen`. Not backfilled — it just moves.
+
+**Cold re-attempt: [[wiki/problems/contains-duplicate|Contains Duplicate]], 3 min
+32 s. Scored `fail`.** Requeued for 2026-09-19.
+
+The code was perfect and arrived from memory in half the original time. Every
+named fix from 2026-09-13 survived three days unprompted: `seen = set()` instead
+of a dict with an unread placeholder, the name `seen` instead of `result`, and
+membership checked before insert. **That half of the problem is retired** — the
+next re-attempt will not re-test it.
+
+The fail is one line. Complexity was volunteered without being asked (the
+narration habit fired, 2 of 3 now), but the sentence was *"Time: O(n) worst"* —
+the average case wearing the worst case's label. The true worst is O(n²) under
+colliding keys. Identical to the 2026-09-13 miss, and the pass condition written
+on that date named this exact string as a fail, in advance. Honouring it.
+
+Space was **right**, and unprompted, and right for the right reason: `k ≈ 2·10⁹`
+does not bind, so O(min(n,k)) resolves to O(n). That gap moves to 2 of 2.
+
+**The finding worth keeping.** Across four boxes now:
+
+> Zero algorithmic errors. Four debriefs of analysis-and-narration misses.
+
+Every error this vault has recorded is in the talking, not the coding. That is
+the [[wiki/meta/current-plan|plan]]'s hypothesis — fluent in the ideas, rusty at
+the performance — picking up its first *re-attempt* evidence rather than more
+first-attempt evidence. It is still four Easies from one pattern family, so the
+Mediums remain what confirms or kills it.
+
+Practical consequence recorded in [[wiki/curriculum/arrays-hashing|Topic 1]]: for
+the rest of this topic, **the complexity sentence is the deliverable, not the
+code.**
+
+[[wiki/meta/gaps|Gaps]] updated: the hash average-case caveat resets to 0 of 3
+and is promoted to the top of Serious — highest-frequency miss on record.
+"Names the approach rejected" is still 0, now across four boxes, and remains the
+cheapest gap on the list to close.
+
+[[wiki/concepts/seen-set|Seen-Set]] **kept at `solid`** rather than demoted. The
+queue's default rule demotes on a failed re-attempt, but the concept itself was
+demonstrated cleanly, twice; what failed was complexity analysis, which is
+tracked as its own gap. Demoting the data-structure concept would have put a
+false statement on the scoreboard. Flagged for Rob rather than done silently.
+
+**Next:** [[wiki/problems/valid-anagram|Valid Anagram]] re-attempt is due today
+and still open. Then `timed group-anagrams` (#4, first Medium).
+
+## 2026-09-16 (cont.) — Valid Anagram re-attempt: second fail, same shape
+
+**Cold re-attempt: [[wiki/problems/valid-anagram|Valid Anagram]], 5 min 53 s
+(was 7 min). Scored `fail`.** Requeued to 2026-09-19, alongside Contains
+Duplicate.
+
+I called it a pass in the debrief and then corrected myself against the written
+pass condition: *"deduplicated, O(1) space stated correctly and unprompted, and
+`Counter` named."* Two of three. `Counter` was named as a required fix on
+2026-09-13 and still was not said. Having failed Contains Duplicate on one
+pre-stated line an hour earlier, a softer standard here would have made the
+scoreboard worthless.
+
+**Real progress, recorded as such.** The complexity was **decomposed** for the
+first time — per-element cost separated from the loop, average/worst attached to
+the hash operation rather than to the whole algorithm — and O(1) space was
+volunteered with the bounded-alphabet justification. That was the headline miss
+on 2026-09-13. It is fixed. Best analysis on record.
+
+**The teaching moment of the day**, now written into
+[[wiki/curriculum/arrays-hashing|Topic 1]] as a table: the two Easies
+re-attempted back to back make a point neither makes alone. `k ≈ 2·10⁹` in
+Contains Duplicate does not bind → space O(n), time worst **O(n²)**. `k = 26` in
+Valid Anagram does bind → space O(1), and therefore a collision scan is over ≤26
+entries, so time is **O(n) worst case included**. Same formula, opposite answers.
+Rob had both halves of that argument in hand today and used it only on space.
+
+**Where the day leaves things.** Two re-attempts, two fails, **zero code
+errors** — one solution byte-identical to the target, the other correct and
+deduplicated. Across six boxes now the vault has recorded no algorithmic mistake
+and nothing but analysis-and-presentation misses.
+
+The queue has stopped testing whether Rob can solve these and started testing
+whether he can **present** them. Noted in [[wiki/meta/review-queue|the queue]] as
+a standing note. Every Serious row in [[wiki/meta/gaps|gaps]] is now a process
+row.
+
+"Names the approach rejected" is **0 across 5 boxes** — named in the
+Valid Anagram write-up itself on 2026-09-13 as "cheap and reads as senior", and
+still never once attempted. It is the cheapest item on the board.
+
+**Next:** `timed group-anagrams` (#4) — the first Medium, still unattempted after
+Monday's slot went unused. It is the box that tests whether the
+"fluent in ideas, rusty at performance" hypothesis survives contact with a
+harder problem, since all six data points so far are Easies.

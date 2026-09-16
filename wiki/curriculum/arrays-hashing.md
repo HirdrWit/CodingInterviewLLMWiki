@@ -1,7 +1,7 @@
 ---
 type: curriculum
 status: learning
-updated: 2026-09-14
+updated: 2026-09-16
 sources: [https://neetcode.io/practice/practice/blind75]
 tags: [curriculum, arrays-hashing]
 ---
@@ -17,8 +17,8 @@ get built, and habits are what survive interview pressure.
 
 | # | Problem | Difficulty | Pattern | Attempts | Status | Write-up |
 |---|---|---|---|---|---|---|
-| 1 | Contains Duplicate | Easy | seen-set | 1 | `solved cold` | [[../problems/contains-duplicate\|write-up]] |
-| 2 | Valid Anagram | Easy | frequency map | 1 | `solved cold` | [[../problems/valid-anagram\|write-up]] |
+| 1 | Contains Duplicate | Easy | seen-set | 2 | `re-attempt failed` — code cold in 3.5 min, complexity sentence wrong | [[../problems/contains-duplicate\|write-up]] |
+| 2 | Valid Anagram | Easy | frequency map | 2 | `re-attempt failed` — code cold in 5.9 min, `Counter` never named | [[../problems/valid-anagram\|write-up]] |
 | 3 | Two Sum | Easy | complement lookup | 1 | `solved cold` | [[../problems/two-sum\|write-up]] |
 | 4 | Group Anagrams | Medium | canonical key | 0 | `unseen` | — |
 | 5 | Top K Frequent Elements | Medium | frequency + bucket sort | 0 | `unseen` | — |
@@ -75,3 +75,53 @@ complexity volunteered with the average-case caveat.
 - Last process step still missing: **name the approach rejected, and why.**
 
 The Mediums (4–8) start here. Expect unfinished boxes — that is the point of them.
+
+**2026-09-16, re-attempt of problem 1.** First failed item in the queue, and it
+is worth being precise about *what* failed. The code came back perfectly from
+memory in 3.5 minutes — `seen = set()`, good names, check-before-insert. Both
+fixes from three days earlier survived without prompting. **The algorithm and the
+data structure are done being tested.**
+
+What failed was the sentence around the code: "O(n) worst" for time, which is the
+average case wearing the worst case's label. Same error as 2026-09-13, flagged at
+every debrief since.
+
+The pattern across four boxes is now hard to miss and is worth stating plainly:
+
+> **Every error this vault has recorded is in the talking, not the coding.**
+> Zero algorithmic errors in four boxes. Four debriefs of analysis and narration
+> misses.
+
+That is the [[../meta/current-plan|plan]]'s hypothesis — fluent in the ideas,
+rusty at the performance — getting its first piece of *re-attempt* evidence
+rather than first-attempt evidence. The Mediums (4–8) are still what confirms or
+kills it, because all four data points so far are Easies.
+
+Practical consequence: on the remaining problems, **the complexity sentence is
+the deliverable, not the code.** Write the code, then say the full sentence —
+average, worst, space against the constraints, and the approach rejected.
+
+**2026-09-16, re-attempt of problem 2.** Second fail of the day, same shape as
+the first: the code arrived cold and correct, the sentence around it fell short
+of a pass condition written three days earlier. `Counter` was named in the
+2026-09-13 write-up as a required fix and still was not said.
+
+**The genuine progress** is in the analysis. Complexity was decomposed for the
+first time — per-element cost separated from the loop, average/worst attached to
+the hash operation rather than the algorithm — and O(1) space was volunteered
+with the bounded-alphabet reason. That was the headline miss on 2026-09-13 and it
+is now fixed.
+
+**The pairing worth keeping from today.** Both Easies re-attempted in one
+session, and together they make the point neither makes alone:
+
+| | Contains Duplicate | Valid Anagram |
+|---|---|---|
+| Key space `k` | ≈ 2·10⁹ | 26 |
+| Does it bind? | no | **yes** |
+| Space | O(n) | O(1) |
+| Time, worst case | **O(n²)** — collisions are unbounded | **O(n)** — a collision scan is over ≤26 entries |
+
+Same structure, same formula `O(min(n, k))`, opposite answers — and the bounded
+alphabet constrains **time as well as space**, which was the half not spotted.
+See [[../concepts/constraint-bounded-complexity]].

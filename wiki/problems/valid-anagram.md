@@ -1,6 +1,6 @@
 ---
 type: problem
-updated: 2026-09-13
+updated: 2026-09-16
 sources: [https://leetcode.com/problems/valid-anagram/]
 tags: [arrays-hashing, easy, frequency-map]
 ---
@@ -153,3 +153,112 @@ reason, is cheap and reads as senior.
 Scheduled in [[../meta/review-queue|review queue]] for: **2026-09-16** (+3d).
 Pass condition: deduplicated, `O(1)` space stated correctly and unprompted, and
 `Counter` named.
+
+---
+
+## Re-attempt 1 — 2026-09-16 (cold), 5 min 53 s
+
+**Result: `fail`** on the pre-stated pass condition — 2 of its 3 clauses met.
+Requeued +3d to **2026-09-19**.
+
+```python
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t):
+            return False
+
+        def count(s: str) -> dict:
+            counts = dict()
+            for ch in s:
+                if ch not in counts:
+                    counts[ch] = 1
+                    continue
+                counts[ch] = counts[ch] + 1
+            return counts
+
+        return count(s) == count(t)
+```
+
+### What passed
+
+- **Deduplicated.** Fix #2's first half landed — the loop is extracted into a
+  helper instead of written twice. Came back from memory unprompted.
+- **O(1) space, stated correctly and unprompted**, with the right justification:
+  the alphabet is bounded at 26, so the dict cannot grow with `n`. This was the
+  headline miss of 2026-09-13 and it is now fixed. See
+  [[../concepts/constraint-bounded-complexity]].
+- **Length guard as an early exit.** Not needed for correctness — dict equality
+  catches it — but it is the right instinct and reads well.
+
+### What failed: `Counter` never named
+
+Fix #2 was *"extract it, **or use `Counter` and say what it is doing
+underneath**"*. The extraction happened; the tool was never named. What got
+written instead was four lines and a `continue` for one idea:
+
+```python
+if ch not in counts:
+    counts[ch] = 1
+    continue
+counts[ch] = counts[ch] + 1
+```
+
+Every shorter form: `Counter(s) == Counter(t)` · `counts[ch] = counts.get(ch, 0) + 1`
+· `defaultdict(int)`.
+
+The interview move is to say both: *"this is `Counter`; I'll write it out to show
+the mechanism."* Naming the library and then choosing to hand-roll reads as
+fluent. Hand-rolling silently reads as not knowing it exists.
+
+Minor: `def count(s)` shadows the outer `s`.
+
+### The complexity — best analysis on record, and one step short
+
+Stated, unprompted:
+
+> "Average O(n) to parse, average O(1) for insert, worst O(n) for collisions.
+> Space O(1) because 26 characters is finite."
+
+First time the cost has been **decomposed** — per-element cost separated from the
+loop, with average/worst attached to the hash operation rather than to the whole
+algorithm. Three days ago the caveat was absent entirely; earlier the same day,
+on [[contains-duplicate|Contains Duplicate]], it was attached to the wrong
+number. This is the habit forming.
+
+Two steps short:
+
+**1. Never multiplied out to a total.** The components were right, the sentence
+stopped before the answer.
+
+**2. The space argument fixes the time argument — and the connection was
+missed.** If the alphabet bounds the dict to ≤26 entries, then a collision scan
+is over ≤26 entries, i.e. O(1). So:
+
+> **Time is O(n) — worst case included.** Not O(n²).
+
+This is the genuinely senior observation available on this problem, and both
+halves of it were already in hand. Contrast with `contains-duplicate`, where
+`k ≈ 2·10⁹` does *not* bind and the O(n²) worst case is real. **Same formula,
+opposite answer, and which side you land on is a fact about the constraints.**
+
+**3. Phrasing.** *"closer to O(1) than O(n)"* — it **is** O(1). Hedged complexity
+reads as uncertainty even when the answer is right.
+
+### Still missing: the rejected alternative — 0 across 5 boxes
+
+Named in this very write-up on 2026-09-13 as "cheap and reads as senior", and
+still not said:
+
+> "Sorting both strings and comparing is O(n log n) time, O(1) extra space.
+> I'm counting instead for O(n) time, and the alphabet bounds the space anyway."
+
+### Next re-attempt
+
+**2026-09-19** (+3d), same day as [[contains-duplicate|Contains Duplicate]].
+Pass condition — the code is proven, so only the talking is under test:
+
+1. **`Counter` named**, whether or not it is the version written.
+2. Time given as a **single total**: O(n), worst case included, *because* the
+   bounded alphabet caps collisions.
+3. Space O(1), stated flat — no hedging.
+4. **One rejected approach named with its reason.**
