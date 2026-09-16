@@ -1,7 +1,7 @@
 ---
 type: concept
-status: unseen
-updated: 2026-09-10
+status: solid
+updated: 2026-09-16
 sources: []
 tags: [arrays-hashing]
 ---
@@ -32,3 +32,9 @@ bookkeeping. For anagrams, `sorted(word)` works (O(k log k) per word), and a
 
 *Not yet studied — comes up at problem 4 of
 [[../curriculum/arrays-hashing|Topic 1]]. Fill this in during that debrief.*
+
+## Evidence
+
+- [[../problems/group-anagrams|Group Anagrams]] — solved cold unaided on
+  2026-09-16, correct on first write, first Medium on record. Key reached for
+  immediately; `tuple(...)` for hashability applied without hesitation.

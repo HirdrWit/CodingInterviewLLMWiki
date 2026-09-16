@@ -20,7 +20,7 @@ get built, and habits are what survive interview pressure.
 | 1 | Contains Duplicate | Easy | seen-set | 2 | `re-attempt failed` — code cold in 3.5 min, complexity sentence wrong | [[../problems/contains-duplicate\|write-up]] |
 | 2 | Valid Anagram | Easy | frequency map | 2 | `re-attempt failed` — code cold in 5.9 min, `Counter` never named | [[../problems/valid-anagram\|write-up]] |
 | 3 | Two Sum | Easy | complement lookup | 1 | `solved cold` | [[../problems/two-sum\|write-up]] |
-| 4 | Group Anagrams | Medium | canonical key | 0 | `unseen` | — |
+| 4 | Group Anagrams | Medium | canonical key | 1 | `solved cold` | [[../problems/group-anagrams\|write-up]] |
 | 5 | Top K Frequent Elements | Medium | frequency + bucket sort | 0 | `unseen` | — |
 | 6 | Encode and Decode Strings | Medium | length-prefix protocol | 0 | `unseen` | — |
 | 7 | Product of Array Except Self | Medium | prefix/suffix accumulation | 0 | `unseen` | — |
@@ -125,3 +125,21 @@ session, and together they make the point neither makes alone:
 Same structure, same formula `O(min(n, k))`, opposite answers — and the bounded
 alphabet constrains **time as well as space**, which was the half not spotted.
 See [[../concepts/constraint-bounded-complexity]].
+
+**2026-09-16, problem 4 — first Medium, solved cold.** Correct on first write,
+canonical key reached immediately, no wrong turns in the algorithm. The
+hypothesis in [[../meta/current-plan|the plan]] — fluent in the ideas, rusty at
+the performance — survives its first contact with a harder problem.
+
+**But the pace data is new and worth having.** 29 min 42 s of a 30 min box,
+against 4–7 minutes on the Easies. Finished, correct, and with no margin left.
+The ceiling is above this problem; it is not far above it.
+
+**The error was dimensional, not phrasing.** Complexity given as O(n log n) when
+it is **O(n · k log k)** — `sorted` runs over a string of length `k`, not over
+the array. Two parameters were flagged before the box and one came back. That is
+the standard follow-up on this exact problem.
+
+New recurring item: **the check-then-insert shape has now appeared in three
+consecutive problems** (1, 2, 4) and `defaultdict` / `setdefault` has not been
+named once. It is the only live drill that has never fired.

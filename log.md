@@ -446,3 +446,50 @@ schedule rather than by evidence, which is the failure mode this vault is
 supposed to prevent.
 
 **Next:** `timed group-anagrams` (#4), first Medium — now the only open item.
+
+## 2026-09-16 (cont.) — first Medium: Group Anagrams, solved cold
+
+**`timed group-anagrams`, 29 min 42 s of a 30 min box. `solved cold`, correct on
+first write.** [[wiki/problems/group-anagrams|Write-up filed.]]
+
+The canonical-key idea was reached immediately — no hesitation, no wrong turns —
+and `tuple(...)` for hashability went in without a pause, which is the detail
+that stalls people mid-box on this problem.
+[[wiki/concepts/canonical-key|Canonical Key]] promoted to `solid` with evidence.
+
+**The hypothesis survives first contact with a Medium.** Fluent in the ideas,
+rusty at the performance: still zero algorithmic errors, now across a harder
+problem, with the misses again in the analysis and the code shape.
+
+**New and worth having: the first real pace data.** 29 m 42 s against 4–7 minutes
+on the Easies — roughly 4×, finished, and with no margin left. The ceiling is
+above this problem but not far above it. Every previous estimate in this vault
+was extrapolated from Easies; this is the first measurement.
+
+**Gap closed: narration under a timer.** Brute force and its complexity stated
+unprompted for a 3rd consecutive box, the third under Medium pressure, which was
+exactly the condition that gap needed. It was the top DSA process risk on the
+board since 2026-09-13.
+
+**Drills, first fires.** The [[wiki/meta/drills|split from this morning]] paid off
+inside one session:
+
+- **D1 — name what you rejected: fired, 1 of 2.** First time in six boxes. Thin
+  on the *why*, but the behaviour happened unprompted.
+- **D2 — hash worst case from the key space: passed, 1 of 3.** *"O(n) worst case
+  since endless possibilities of words as keys, not just letters"* — correct
+  reasoning, attached to the lookup rather than the total, which is exactly the
+  distinction missed on Contains Duplicate the same morning.
+- **D3 — name the stdlib tool: failed again.** `defaultdict` / `setdefault` not
+  named. The check-then-insert shape has now appeared in **three consecutive
+  problems** and the tool has never been named once. Only drill yet to fire.
+
+**New drill D5: count the parameters before stating complexity.** Complexity was
+given as O(n log n); it is **O(n · k log k)**, because `sorted` runs over a string
+of length `k`, not over the array. Two parameters were flagged before the box
+started and one came back. Filed as substantive rather than semantic — it is the
+standard interview follow-up on this exact problem, and Rob's 2026-09-16 note
+about over-indexing on phrasing does not cover it.
+
+**Next:** problem 5, `timed top-k-frequent`. Re-attempt of
+[[wiki/problems/two-sum|Two Sum]] is due 2026-09-17.

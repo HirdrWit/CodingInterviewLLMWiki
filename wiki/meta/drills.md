@@ -26,15 +26,16 @@ Reference material — to *read*, not to re-earn:
 
 | # | Drill | Failed on | Streak | Retires at |
 |---|---|---|---|---|
-| D1 | **Name what you rejected.** Given a problem, name one approach not taken and why, in one sentence | 0 across 5 boxes — never once attempted | 0 / 2 | 2 consecutive |
-| D2 | **The hash-op worst case.** Given a problem, is the worst case O(n) or O(n²)? Justify from the key space | [[../problems/contains-duplicate\|Contains Duplicate]] 2026-09-13, 2026-09-16 | 0 / 3 | 3 consecutive |
-| D3 | **Name the stdlib tool.** Given a hand-rolled snippet, name what replaces it | [[../problems/valid-anagram\|Valid Anagram]] 2026-09-16 (`Counter`) | 0 / 2 | 2 consecutive |
+| D1 | **Name what you rejected.** Given a problem, name one approach not taken and why, in one sentence | 0 across 5 boxes; **first fire 2026-09-16** ([[../problems/group-anagrams\|Group Anagrams]]) | **1 / 2** | 2 consecutive |
+| D2 | **The hash-op worst case.** Given a problem, is the worst case O(n) or O(n²)? Justify from the key space | [[../problems/contains-duplicate\|Contains Duplicate]] 2026-09-13, 2026-09-16; **passed 2026-09-16** on [[../problems/group-anagrams\|Group Anagrams]] | **1 / 3** | 3 consecutive |
+| D3 | **Name the stdlib tool.** Given a hand-rolled snippet, name what replaces it | [[../problems/valid-anagram\|Valid Anagram]] 2026-09-16 (`Counter`); [[../problems/group-anagrams\|Group Anagrams]] 2026-09-16 (`defaultdict`) | 0 / 2 | 2 consecutive |
 
 ## Passing, not yet retired
 
 | # | Drill | Streak | Note |
 |---|---|---|---|
 | D4 | **Space against the constraints**, volunteered | 2 / 2 → **retiring** | Nailed on 2026-09-16 with the bounded-alphabet reason. Hold one spot check, then drop |
+| D5 | **Count the parameters before stating complexity.** When a problem has both a number of items and a size per item, name both | 0 / 2 | **New 2026-09-16.** [[../problems/group-anagrams\|Group Anagrams]] answered O(n log n); it is O(n · k log k). Substantive, not phrasing — this is the standard interview follow-up on that problem |
 
 ## Retired
 

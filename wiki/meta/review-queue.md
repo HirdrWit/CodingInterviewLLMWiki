@@ -30,6 +30,7 @@ failed on moved to [[drills|drills]].*
 | Item | Skill | Last attempt | Result | Due |
 |---|---|---|---|---|
 | [[../problems/two-sum\|Two Sum]] | [[../concepts/complement-lookup\|Complement Lookup]] | 2026-09-14 | `solved cold`, 11 min | **2026-09-17** |
+| [[../problems/group-anagrams\|Group Anagrams]] | [[../concepts/canonical-key\|Canonical Key]] | 2026-09-16 | `solved cold`, 29 m 42 s — first Medium | **2026-09-19** |
 
 ## Retired
 *Passed +90d cold. Genuinely known.*
@@ -38,6 +39,11 @@ failed on moved to [[drills|drills]].*
 |---|---|---|
 | [[../problems/contains-duplicate\|Contains Duplicate]] | [[../concepts/seen-set\|Seen-Set]] | 2026-09-16 — **code retired early.** Solved cold twice, 7 min then 3 min 32 s, second attempt byte-identical to the target solution. Nothing left to test |
 | [[../problems/valid-anagram\|Valid Anagram]] | [[../concepts/frequency-map\|Frequency Map]] | 2026-09-16 — **code retired early.** Solved cold twice, 7 min then 5 min 53 s, correct and deduplicated both times |
+
+---
+
+**Pass condition for Group Anagrams:** solved cold again, `defaultdict` or
+`setdefault` used or named, and complexity stated in **both** `n` and `k`.
 
 ---
 
