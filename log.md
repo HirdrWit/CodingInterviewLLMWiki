@@ -554,3 +554,106 @@ none of it costing a re-solve.
 
 **Next:** [[wiki/problems/two-sum|Two Sum]] re-attempt due 2026-09-17, then
 `timed encode-decode-strings` (#6). Topic 1 is 5 of 8.
+
+---
+
+## 2026-09-16 — First live pipeline: Zipline, African division
+
+Rob has an interview with **[[wiki/companies/zipline|Zipline]]** — the drone
+delivery company that runs Rwanda's national blood network and Ghana's vaccine
+distribution — under the African division. Round, role title, team and date all
+unknown. Researched the company and the reported interview process from the web
+and filed both: raw findings in
+`sources/2026-09-16-zipline-interview-research.md`, distilled page in
+[[wiki/companies/zipline|wiki/companies/zipline]]. First entry in
+[[wiki/companies/index|Companies]], which until today was an empty table.
+
+**What the research says, and how much to trust it.** The company facts are
+solid: $7.6B valuation on a ~$800M Series H (Jan 2026), ~1,545 employees, 2M
+cumulative deliveries, seven countries. The **stack is firm** because it comes
+from Zipline's own postings — the Africa-facing team is *Nest Applications
+Software*, running **Go, Python, React, Kafka, PostgreSQL, AWS, Kubernetes**.
+The **interview process is rumour-grade** — Glassdoor, Blind and aggregator
+guides, 22 SWE reviews, 33% positive, ~27 days end to end. Marked as such on the
+page rather than laundered into fact.
+
+**The claim that matters, if it holds.** Every source repeats that Zipline does
+*not* run standard big-tech algorithmic puzzles — the loop is a take-home treated
+as production code, a technical interview on that take-home, code comprehension,
+system design, and a product-prioritisation round. If true, **DSA is the least
+relevant gap for this specific company**, which is close to the inverse of the
+vault's whole current ordering. It is one recruiter question away from being
+settled, so five such questions are listed on the page. Nothing in
+[[wiki/curriculum/index|the curriculum]] has been re-ordered on an unverified
+claim.
+
+**Three gaps added to [[wiki/meta/gaps|gaps]].** System design moved to
+**Blocking** — it has zero evidence, it is `unseen` on the
+[[wiki/meta/skill-tree|skill tree]], and there is now a live loop with a
+dedicated design round whose themes are specific (a sensor communication bus;
+backend services for flight coordination and airspace routing). Severity is
+genuinely date-dependent and the date is unknown. Two Background rows: the
+unproven half of the stack (React, Kafka, Postgres depth, K8s/AWS — Go is the one
+strong match), and the fact that **[[wiki/meta/profile|the profile]] and this
+pipeline disagree**. The profile targets Senior Engineer / SEM at an S&P-listed
+company in Boston; Zipline's African division is a late-stage private drone
+company centred on Kigali. Gaps are ranked by severity *against the target role*,
+so with two target roles the ranking is not honest. Flagged for Rob, not resolved
+— the profile is his to edit.
+
+**Nothing promoted, nothing demoted.** No status changed; no evidence was
+produced today. [[wiki/meta/current-plan|The plan]] is untouched and the next
+action is still the [[wiki/problems/two-sum|Two Sum]] re-attempt due 2026-09-17.
+
+## 2026-09-16 (later) — Zipline take-home: researched, and a decoy caught
+
+Rob asked what is known about the take-home. Second research pass; findings in
+[[wiki/companies/zipline-take-home|wiki/companies/zipline-take-home]], raw notes
+appended to `sources/2026-09-16-zipline-interview-research.md` under a dated
+correction block.
+
+**The correction first, because it affects this morning's entry.** There are
+**two companies called Zipline**. Glassdoor **E1394276** — Transportation &
+Logistics, 257 reviews, 3.7★ — is the drone company. **E1732473** — Information
+Technology, 27 reviews, 4.7★ — is **Retail Zipline**, a retail-communications
+SaaS. Every interview figure filed this morning came from E1394276, so the
+substance stands, but one source URL in the list pointed at E1732473 and is now
+marked. The live trap: `github.com/retailzipline/zipline_take_home` is Retail
+Zipline's public take-home — extend an email service, Rails 7 + Hotwire — and it
+is the **top search hit for "zipline take home"**. Preparing against it would
+have been a wasted weekend on the wrong company's stack.
+
+**What the take-home actually is.** Stated 2–4 hours; Dataford says 3–4 for a
+half-decent job; candidates report **8–12 hours** to be competitive. Two reported
+task shapes, both recognisably Zipline's real business: an **inventory
+management and packing API** under strict payload weight thresholds, and a
+**path-planning simulation** computing risk-aware trajectories around weather
+anomalies. Both are the same shape — a constrained optimisation over a small
+domain model. Stated criteria are **code quality and modularity**, **trade-offs
+justified**, and **error handling and edge cases**. Note what is absent: finding
+the optimal algorithm. Two of the three criteria are judgment and communication.
+It is followed by a **~45-minute panel presentation** of the solution.
+
+**The risk worth naming.** Rob's top Serious gap is *coding fluency from an empty
+file, unaided* — rusty after four years of management and after AI took over the
+generative work. A take-home is the one format where that gap can be papered
+over, and **round 4 is built to find out**. The prep page states the rule
+plainly: whatever writes the code, every line must be defensible cold to a panel.
+
+**The upside, which is real.** Three of Rob's standing open gaps —
+*never names the rejected approach* (0 across 4 boxes, the longest-running),
+*complexity unprompted*, and *loose naming* — are all **free marks in a
+take-home README**, where there is time to do deliberately what keeps failing
+under a 30-minute timer. The prep checklist makes each one an explicit line item.
+This is the first time the pipeline and the [[wiki/meta/drills|drills]] have
+pointed at the same work.
+
+**Recommended time strategy** recorded on the page: box the code at ~5 hours,
+spend 2 more on README and tests, since the two cheapest criteria to satisfy are
+prose and tests rather than features. Also recorded, honestly: multiple
+candidates report submitting and **never hearing back**, and Glassdoor rates the
+experience 33% positive — a reason to box the time, not to skip it.
+
+Four more recruiter questions added (time expectation, AI policy, panel format,
+language). **No statuses changed; no evidence produced.** Next action is still
+the [[wiki/problems/two-sum|Two Sum]] re-attempt due 2026-09-17.

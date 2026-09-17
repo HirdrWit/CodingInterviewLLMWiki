@@ -19,9 +19,11 @@ Each gap: what's missing, how it was discovered, what would close it.
 
 | Gap | Discovered via | Closes when |
 |---|---|---|
-| — | — | — |
+| **System design has zero evidence, and there is now a live pipeline with a dedicated design round.** [[../companies/zipline\|Zipline]]'s reported loop includes system design, with themes as specific as a sensor communication bus and backend services for flight coordination and airspace routing. `unseen` on the [[skill-tree\|skill tree]], no linked evidence | [[../companies/zipline\|Zipline]] research, 2026-09-16 | one design round rehearsed end to end and written up, with the tradeoffs named |
+| **Cannot defend own code cold to a panel — untested.** [[../companies/zipline-take-home\|Zipline's take-home]] is followed by a ~45-minute panel presentation asking why and how. This is the round that intersects Rob's top Serious gap (coding fluency from an empty file, rusty since AI tooling took over generative work) | [[../companies/zipline-take-home\|Zipline take-home]] research, 2026-09-16 | one self-set take-home written and defended aloud, every line explained without notes |
 
-*Nothing blocking. The DSA-untested gap closed 2026-09-14 — see Closed gaps.*
+*Severity depends on a date nobody has yet: the Zipline interview round and date
+are unknown. If it is close, this is blocking. Ask, then re-rank.*
 
 ## Serious
 *Will show up soon.*
@@ -41,6 +43,8 @@ Each gap: what's missing, how it was discovered, what would close it.
 |---|---|---|
 | Hours per week, target date and definition of done still blank in [[profile]], so weekly volume is a guess | wiki setup, 2026-09-10; partially filled 2026-09-14 | those three fields filled in |
 | Behavioral and design claimed solid from 4 years of doing the EM job, but `unseen` on the [[skill-tree\|skill tree]] — no linked evidence. Doing the job well and performing it against a loop rubric are different skills | stated by Rob 2026-09-14 | one design post-mortem page written up from real Vivint work |
+| **Zipline's named stack is unproven: React, Kafka/event-driven, PostgreSQL modelling and tuning, production Kubernetes/AWS.** Go is the one strong match. These are [[skill-tree\|skill-tree]] bands 2–4, deliberately parked — listed here so the parking is a decision and not an oversight | [[../companies/zipline\|Zipline]] job postings, 2026-09-16 | Rob decides whether the Zipline pipeline outranks [[profile\|the stated target]]; until then, parked |
+| **[[profile\|The profile]] and the live pipeline disagree.** Profile targets Senior Engineer / SEM at an S&P-listed company, Boston hybrid. [[../companies/zipline\|Zipline]]'s African division is a late-stage private drone company centred on Kigali. Gap ranking is "severity against the target role" — with two target roles, the ranking is not honest | [[../companies/zipline\|Zipline]] research, 2026-09-16 | Rob updates [[profile]], or explicitly says Zipline is a one-off |
 | Everything outside DSA is parked by choice, **reaffirmed 2026-09-14** after Rob corrected an initial suggestion to rebalance toward design/behavioral. DSA is the self-assessed weakest area and the perishable one | 2026-09-10; reaffirmed 2026-09-14 | Topic 1–3 are cold-solvable |
 
 ---

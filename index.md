@@ -48,7 +48,7 @@ a concept page written is not a skill earned. The scoreboard that counts is the
 - [[wiki/problems/index|Problems]] — every practice attempt, wrong turns included
 - [[wiki/concepts/index|Concepts]] — atomic ideas, reused everywhere
 - [[wiki/projects/index|Projects]] — portfolio work
-- [[wiki/companies/index|Companies]] — targets and their stacks
+- [[wiki/companies/index|Companies]] — targets and their stacks. **[[wiki/companies/zipline|Zipline]] is live**
 - [[wiki/interviews/index|Interviews]] — real post-mortems
 - [[wiki/queries/index|Queries]] — questions worth keeping the answer to
 
