@@ -98,6 +98,62 @@ Not an edge case — it is *every* tie. Leaning on the constraint is legitimate;
 > "This relies on the answer being unique. With ties at the boundary the bucket
 > length skips past k — I'd switch to collecting from the top until I have k."
 
+## The expected solution
+
+Standard bucket sort — count **first**, then bucket by final count:
+
+```python
+from collections import Counter
+
+class Solution:
+    def topKFrequent(self, nums: list[int], k: int) -> list[int]:
+        count = Counter(nums)
+        buckets = [[] for _ in range(len(nums) + 1)]
+        for num, freq in count.items():
+            buckets[freq].append(num)
+
+        result = []
+        for freq in range(len(buckets) - 1, 0, -1):
+            for num in buckets[freq]:
+                result.append(num)
+                if len(result) == k:
+                    return result
+```
+
+| | Mine | Standard |
+|---|---|---|
+| Bucket contents | "at least `f` times" — cumulative | "exactly `f` times" |
+| Built | during the count pass | after it |
+| Extraction | first bucket with `len == k` | accumulate until `len(result) == k` |
+| Needs the uniqueness guarantee? | **yes** | no |
+
+**The accumulate-until-`k` loop is what buys the robustness.** It takes elements
+one at a time, so it stops at exactly `k` however a tied bucket is laid out —
+where a length check has to *land* on `k` and can skip past it. Verified
+2026-09-16: the standard form is correct on **19,619 / 19,619** tie inputs, the
+same class where mine returns `[]`.
+
+Both are O(n). Mine does less work extracting; it is narrower, not worse.
+
+### The heap answer, worth naming
+
+```python
+return [num for num, _ in Counter(nums).most_common(k)]
+```
+
+`most_common` uses a heap — **O(n log k)**. Fine to write, but say what it does
+underneath or it reads as dodging the question.
+
+**Why bucket sort is the expected answer:** the follow-up demands better than
+O(n log n), and O(n log k) technically satisfies that while O(n) is the real
+target. Bucket sort gets there because **frequencies are bounded by `n`, so they
+can be array indices rather than things to compare** — which is why it escapes
+the comparison-sort lower bound. It is not a comparison sort.
+
+The strong rejection sentence for this problem is therefore the heap, not
+sorting: *"A heap gives O(n log k). But frequencies are bounded by n, so I can
+index by them instead of comparing — bucket sort, O(n)."*
+
 ## Complexity
 
 **Time O(n). Space O(n).** Stated correctly in the box.
