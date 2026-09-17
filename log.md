@@ -509,3 +509,48 @@ time. Zero algorithmic errors across three boxes.
 
 **Resumes at:** [[wiki/problems/two-sum|Two Sum]] re-attempt, due 2026-09-17,
 then `timed top-k-frequent` (#5).
+
+## 2026-09-16 (cont.) — second Medium: Top K Frequent, solved cold in 18:41
+
+**`timed top-k-frequent`, 18 min 41 s. `solved cold`, O(n), stated follow-up
+bound cleared.** Eleven minutes faster than the first Medium, same evening.
+[[wiki/problems/top-k-frequent-elements|Write-up filed]]; new concept page
+[[wiki/concepts/bucket-sort|Bucket Sort]].
+
+**A non-textbook solution, reached cold.** Rather than counting first and then
+bucketing by final count, he appends on every increment and never removes — so
+each bucket holds everything occurring *at least* that many times, the lists grow
+monotonically, and the first of length exactly `k` is the answer. I did not
+believe it at first read and fuzzed it: **40,368 valid inputs, zero mismatches.**
+
+**The real lesson of the box is not the algorithm — it is what the algorithm
+rests on.** The solution is correct *only* because the statement guarantees a
+unique answer. With a tie at the boundary the bucket length skips past `k` and
+the function returns `[]`. Fuzzed separately: **19,558 of 19,558 ambiguous inputs
+wrong.** Every tie, not an edge case.
+
+Leaning on a stated constraint is legitimate and I said so. The risk is that it
+went **unnamed** — an interviewer who spots the dependency will ask whether the
+candidate spotted it. New drill **D6: name the guarantee you lean on**, with what
+breaks without it.
+
+**Drills moved a lot in one box:**
+
+- **D1 retired.** "Sorting, because that would be O(n log n)" — approach and
+  reason, 2 consecutive. Six boxes to fire once, then gone in two.
+- **D3 fired for the first time**, 1 of 2. *"I could have used `Counter` but
+  chose not to"* is exactly the sentence — names the tool, then chooses.
+- **D4 reopened**, having been at 2/2 and retiring. Claimed a worst case of
+  "every number unique" when the value range `-10⁴..10⁴` caps the dict at 20,001
+  entries however large `n` gets. Rewritten to target the value range
+  specifically, since that is the form that failed.
+- D5 moved to Live where it belonged.
+
+**Where the day ends.** Three boxes, three cold solves, two of them Mediums, and
+**still zero algorithmic errors on record across eight boxes.** The drill split
+made this evening legible in a way the old queue would not have: one drill
+retired, one fired first time, one reopened, one added — all inside two boxes,
+none of it costing a re-solve.
+
+**Next:** [[wiki/problems/two-sum|Two Sum]] re-attempt due 2026-09-17, then
+`timed encode-decode-strings` (#6). Topic 1 is 5 of 8.

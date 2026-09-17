@@ -31,6 +31,7 @@ failed on moved to [[drills|drills]].*
 |---|---|---|---|---|
 | [[../problems/two-sum\|Two Sum]] | [[../concepts/complement-lookup\|Complement Lookup]] | 2026-09-14 | `solved cold`, 11 min | **2026-09-17** |
 | [[../problems/group-anagrams\|Group Anagrams]] | [[../concepts/canonical-key\|Canonical Key]] | 2026-09-16 | `solved cold`, 29 m 42 s — first Medium | **2026-09-19** |
+| [[../problems/top-k-frequent-elements\|Top K Frequent]] | [[../concepts/bucket-sort\|Bucket Sort]] | 2026-09-16 | `solved cold`, 18 m 41 s | **2026-09-19** |
 
 ## Retired
 *Passed +90d cold. Genuinely known.*
@@ -41,6 +42,9 @@ failed on moved to [[drills|drills]].*
 | [[../problems/valid-anagram\|Valid Anagram]] | [[../concepts/frequency-map\|Frequency Map]] | 2026-09-16 — **code retired early.** Solved cold twice, 7 min then 5 min 53 s, correct and deduplicated both times |
 
 ---
+
+**Pass condition for Top K Frequent:** solved cold, and the **uniqueness
+guarantee named unprompted** with what breaks without it.
 
 **Pass condition for Group Anagrams:** solved cold again, `defaultdict` or
 `setdefault` used or named, and complexity stated in **both** `n` and `k`.

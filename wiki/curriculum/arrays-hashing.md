@@ -21,7 +21,7 @@ get built, and habits are what survive interview pressure.
 | 2 | Valid Anagram | Easy | frequency map | 2 | `re-attempt failed` — code cold in 5.9 min, `Counter` never named | [[../problems/valid-anagram\|write-up]] |
 | 3 | Two Sum | Easy | complement lookup | 1 | `solved cold` | [[../problems/two-sum\|write-up]] |
 | 4 | Group Anagrams | Medium | canonical key | 1 | `solved cold` | [[../problems/group-anagrams\|write-up]] |
-| 5 | Top K Frequent Elements | Medium | frequency + bucket sort | 0 | `unseen` | — |
+| 5 | Top K Frequent Elements | Medium | frequency + bucket sort | 1 | `solved cold` | [[../problems/top-k-frequent-elements\|write-up]] |
 | 6 | Encode and Decode Strings | Medium | length-prefix protocol | 0 | `unseen` | — |
 | 7 | Product of Array Except Self | Medium | prefix/suffix accumulation | 0 | `unseen` | — |
 | 8 | Longest Consecutive Sequence | Medium | set membership + sequence starts | 0 | `unseen` | — |
@@ -143,3 +143,25 @@ the standard follow-up on this exact problem.
 New recurring item: **the check-then-insert shape has now appeared in three
 consecutive problems** (1, 2, 4) and `defaultdict` / `setdefault` has not been
 named once. It is the only live drill that has never fired.
+
+**2026-09-16, problem 5 — second Medium, solved cold in 18 m 41 s.** Faster than
+the first Medium by 11 minutes, O(n), stated follow-up bound cleared.
+
+Reached a **non-textbook formulation** of bucket sort cold: appending on every
+increment so each bucket holds everything occurring *at least* that many times,
+then taking the first bucket of length exactly `k`. Verified correct by fuzzing
+(40,368 valid inputs, zero mismatches). New concept page:
+[[../concepts/bucket-sort]].
+
+**The lesson of this box is not the algorithm.** The solution is correct *only*
+because the statement guarantees a unique answer — with a boundary tie the bucket
+length skips past `k` and it returns `[]` (19,558 of 19,558 ambiguous inputs
+wrong). Leaning on a constraint is legitimate. Not naming it is the risk, and it
+went unnamed.
+
+Generalised: **when a constraint is what makes the solution work, say which one
+and what breaks without it.** New drill D6.
+
+Second miss, on a drill that was retiring: claimed a worst case of "every number
+unique" when the value range `-10⁴..10⁴` caps the dict at 20,001 entries however
+large `n` gets. Same fact handled correctly on problem 2.
